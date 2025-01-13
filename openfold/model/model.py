@@ -588,4 +588,7 @@ class AlphaFold(nn.Module):
         # Run auxiliary heads
         outputs.update(self.aux_heads(outputs))
 
+        # Add single representation to the final output
+        outputs["single_representation"] = outputs["single"]
+
         return outputs
